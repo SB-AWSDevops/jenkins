@@ -3,17 +3,17 @@ pipeline {
    stages {
       stage('Build') { 
           steps {
-             STEPS FOR BUILDING YOUR APPLICATION
+             sh 'echo this is build'
             }
         }
       stage('Test') { 
           steps {
-             STEPS FOR TESTING DIFFERENT SCENARIOS YOUR APPLICATION
+             sh 'echo this is test'
             }
         }
       stage('Deploy') { 
           steps {
-        FINALLY DEPLOYMENT OF DIFFERENT COMPONENTS OF AN APPLICATION 
+       sh 'echo this is deploy'
             }
         }
     }
