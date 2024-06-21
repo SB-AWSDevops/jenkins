@@ -20,6 +20,13 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
+
+    
+    environment{
+            DEPLOY_TO = 'dev'
+            MESSAGE = 'DEPLOYED TO DEV'
+        }
+        
    stages {
       stage('Build') { 
           steps {
@@ -55,9 +62,5 @@ pipeline {
             }
         }
 
-    environment{
-            DEPLOY_TO = 'dev'
-            MESSAGE = 'DEPLOYED TO DEV'
-        }
       }
     }
