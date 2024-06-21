@@ -21,7 +21,7 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
    environment{
-            DEPLOY_TO = 'DEV
+            DEPLOY_TO = 'DEV'
             GREETING = 'DEPLOYED TO DEV'
         }
 
@@ -57,6 +57,8 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
 
                 echo "SUCCESSFULLY TRIGGERED!! WEBHOOK!!"
+
+                error 'failure occured'
             }
         }
 
