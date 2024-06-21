@@ -3,6 +3,12 @@ pipeline {
         label 'AGENT-1'
    }
 
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+
    parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
@@ -14,16 +20,8 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-
-   options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-    }
-
-    
-    environment{
-            DEPLOY_TO = 'dev'
+   environment{
+            DEPLOY_TO = 'PROD'
             GREETING = 'DEPLOYED TO DEV'
         }
 
@@ -31,7 +29,6 @@ pipeline {
       stage('Build') { 
           steps {
              sh 'echo this is build'
-             sh 'sleep 10'
             }
         }
       stage('Test') { 
