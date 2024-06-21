@@ -61,4 +61,16 @@ pipeline {
         }
 
       }
+
+      post{
+        always{
+            echo 'I will always say hello again'
+        }
+        success{
+            echo 'I will say hello only when success'
+        }
+        failure{
+            echo 'I will say hello only when failure'
+        }
+      }
     }
