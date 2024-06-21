@@ -56,7 +56,7 @@ pipeline {
         }
 
         environment{
-            DEPLOY_TO = "dev"
+            DEPLOY_TO = 'dev'
             MESSAGE = 'DEPLOYED TO DEV'
         }
       }
