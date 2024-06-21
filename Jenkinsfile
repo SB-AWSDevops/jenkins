@@ -50,6 +50,8 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
+
+                echo "SUCCESSFULLY TRIGGERED!! WEBHOOK!!"
             }
         }
       }
