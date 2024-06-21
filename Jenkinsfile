@@ -24,9 +24,9 @@ pipeline {
     
     environment{
             DEPLOY_TO = 'dev'
-            MESSAGE = 'DEPLOYED TO DEV'
+            GREETING = 'DEPLOYED TO DEV'
         }
-        
+
    stages {
       stage('Build') { 
           steps {
